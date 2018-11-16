@@ -6,11 +6,11 @@ Particle[] p= new Particle[403];
 void setup() {
   size(600, 600);
   jup=loadImage("otherplan.png");
-  jup.resize(60,50);
+  jup.resize(86,73);
   met=loadImage("meteor.png");
-  met.resize(50, 50);
+  met.resize((int)(Math.random()*20)+20, (int)(Math.random()*20)+20);
   plan=loadImage("earth.png");
-  plan.resize(40, 35);
+  plan.resize(50, 45);
   
   for (int i=0; i<p.length; i++) {
     p[i]=new NormalParticle();
@@ -45,7 +45,7 @@ class NormalParticle implements Particle {
   void show() {
     noStroke();
     fill(255, (float)((Math.random()*69)+171), (float)(Math.random()*230));
-    ellipse((int)x, (int)y, (int)(Math.random()*50), (int)(Math.random()*50));
+    ellipse((int)x, (int)y, (int)(Math.random()*8), (int)(Math.random()*8));
   }
   void move() {
     x+=Math.cos(angle)*speed;
